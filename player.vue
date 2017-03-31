@@ -115,7 +115,7 @@
           'autoplay': options.autoplay !== undefined ? options.autoplay : true,
           'preload': options.preload || 'auto',
           'poster': options.poster ||  '',
-          'wdith': options.wdith || '100%',
+          'width': options.width || '100%',
           'height': options.height || 360,
           'fluid': options.fluid || false,
           'controlBar': options.controlBar || controlBar,
@@ -132,7 +132,7 @@
 
         // 是否应用IOS下的禁止自动全屏
         var playsinline = options.playsinline
-        playsinline && this.$el.children[0].setAttribute('webkit-playsinline', playsinline)
+        playsinline && (this.$el.children[0].setAttribute('playsinline', playsinline),this.$el.children[0].setAttribute('webkit-playsinline', playsinline))
 
         // 是否适用youtube
         // if (video_options.techOrder.indexOf('youtube') > -1) require('videojs-youtube')
